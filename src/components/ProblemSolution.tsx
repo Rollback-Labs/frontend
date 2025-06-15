@@ -20,7 +20,7 @@ const ProblemSolution = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="rounded-2xl shadow-md transform transition-all hover:scale-105 duration-300 bg-white overflow-hidden">
+          <div className="rounded-2xl shadow-md transform transition-all lg:hover:scale-105 duration-300 bg-white overflow-hidden">
             <div className="p-8">
               <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center mb-6 mx-auto lg:mx-0">
                 <ShieldAlert className="h-8 w-8 text-destructive" />
@@ -54,7 +54,7 @@ const ProblemSolution = () => {
             />
           </div>
 
-          <div className="rounded-2xl shadow-md transform transition-all hover:scale-105 duration-300 bg-white overflow-hidden">
+          <div className="rounded-2xl shadow-md transform transition-all lg:hover:scale-105 duration-300 bg-white overflow-hidden">
             <div className="p-8">
               <div className="w-16 h-16 rounded-full bg-rollback-primary/10 flex items-center justify-center mb-6 mx-auto lg:mx-0">
                 <ShieldCheck className="h-8 w-8 text-rollback-primary" />
