@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,10 +8,9 @@ import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import DocumentationPage from "./pages/DocumentationPage";
-import AppDashboard from "./pages/AppDashboard";
 import NotFound from "./pages/NotFound";
 import MediaKitPage from "./pages/MediaKitPage";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 // Add framer-motion
 import { AnimatePresence } from "framer-motion";
@@ -32,7 +30,6 @@ const App = () => (
             <Route path="/about" element={<AboutPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/docs" element={<DocumentationPage />} />
-            <Route path="/app" element={<AppDashboard />} />
             <Route path="/media-kit" element={<MediaKitPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

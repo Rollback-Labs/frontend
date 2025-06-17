@@ -45,9 +45,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">Never Lose Access</span> to Your
+              <span className="gradient-text">Never Lose Access</span> to
               <br />
-              <span className="text-reveal">Crypto Again</span>
+              <span className="text-reveal"> Your Crypto Again</span>
             </motion.h1>
 
             <motion.p
@@ -64,7 +64,7 @@ const Hero = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 w-full max-w-md mx-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 w-full mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -74,7 +74,7 @@ const Hero = () => {
                 size="lg"
                 className="bg-rollback-primary hover:bg-rollback-primary/90 text-white text-lg px-8 btn-primary shadow-lg hover:shadow-rollback-primary/30 group w-full sm:w-auto"
               >
-                <Link to="/app">
+                <Link to="https://app.rollbacklabs.com" target="_blank">
                   <Zap className="mr-2 h-5 w-5 group-hover:animate-bounce-soft" />
                   Protect Your Assets
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

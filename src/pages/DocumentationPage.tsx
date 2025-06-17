@@ -181,7 +181,7 @@ const DocumentationPage = () => {
                       </CardContent>
                       <CardFooter>
                         <Button asChild className="w-full bg-rollback-primary hover:bg-rollback-primary/90 text-white">
-                          <a href="/app">
+                          <a href="https://app.rollbacklabs.com" target="_blank">
                             Try It Now
                             <ChevronRight className="ml-2 h-4 w-4" />
                           </a>

@@ -62,7 +62,9 @@ const Navigation = () => {
             className="bg-rollback-primary hover:bg-rollback-primary/90 text-white text-xs sm:text-sm btn-primary shadow-lg hover:shadow-rollback-primary/30 px-4 py-2 sm:px-6 sm:py-2 rounded-full min-w-[100px] max-w-[140px] w-full sm:w-auto"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/app">Launch App</Link>
+              <Link to="https://app.rollbacklabs.com" target="_blank">
+                Launch App
+              </Link>
             </motion.div>
           </Button>
         </div>

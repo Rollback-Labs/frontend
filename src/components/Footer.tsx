@@ -222,8 +222,6 @@ const Footer = () => {
               </div>
             </motion.div>
 
-            
-
             {/* Quick Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -238,7 +236,6 @@ const Footer = () => {
                 {[
                   { to: "/", label: "Home" },
                   { to: "/about", label: "About" },
-                  { to: "/app", label: "Dashboard" },
                   { to: "/media-kit", label: "Media Kit" },
                 ].map((link, index) => (
                   <motion.li
