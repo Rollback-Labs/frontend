@@ -50,7 +50,7 @@ const Navigation = () => {
             transition={{ duration: 0.2 }}
           >
             <Link to="/" className="flex-shrink-0 flex items-center group">
-              <RollbackLogo className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
+              <RollbackLogo className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 animate-spin-slow" />
               <span className="ml-2 text-sm sm:text-base md:text-lg font-semibold group-hover:text-rollback-primary transition-colors duration-300">
                 Rollback
               </span>

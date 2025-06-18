@@ -162,7 +162,7 @@ const Hero = () => {
                       ease: "easeInOut",
                     }}
                   >
-                    <RollbackLogo className="w-40 h-40" />
+                    <RollbackLogo className="w-40 h-40 animate-spin-slow" />
                   </motion.div>
 
                   <svg viewBox="0 0 200 200" className="w-full h-full">

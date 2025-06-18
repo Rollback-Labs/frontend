@@ -191,7 +191,7 @@ const Footer = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <RollbackLogo className="h-7 w-7 sm:h-8 sm:w-8 mr-2" />
+                  <RollbackLogo className="h-7 w-7 sm:h-8 sm:w-8 mr-2 animate-spin-slow" />
                 </motion.div>
                 <span className="text-lg sm:text-xl font-bold">Rollback</span>
               </div>
