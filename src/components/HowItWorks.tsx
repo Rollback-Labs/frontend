@@ -140,7 +140,7 @@ const HowItWorks = () => {
                       {step.icon}
                     </div>
 
-                    <div className="flex flex-col items-start justify-center flex-1 relative h-12 overflow-hidden">
+                    <div className="flex flex-col items-start justify-center flex-1 relative h-16 md:h-12 overflow-hidden">
                       {/* Title - slides out to left on hover */}
                       <h3 className="text-lg font-semibold transition-all duration-500 ease-in-out absolute inset-0 flex items-center opacity-100 group-hover:opacity-0 group-hover:text-rollback-primary transform translate-x-0 group-hover:-translate-x-full">
                         {step.title}
