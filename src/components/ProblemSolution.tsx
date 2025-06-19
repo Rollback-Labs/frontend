@@ -30,7 +30,7 @@ const ProblemSolution = () => {
               </h3>
               <ul className="space-y-4">
                 {[
-                  "Over $140 billion worth of Bitcoin is estimated to be inaccessible due to lost private keys",
+                  "Billions of dollars in crypto wallet funds have been lost forever due to lost private keys",
                   "When crypto owners die without sharing access, their assets are lost forever",
                   "Technical errors, forgotten passwords, and hardware failures create permanent losses",
                   "No built-in recovery mechanisms exist in most blockchain systems",
@@ -110,9 +110,11 @@ const ProblemSolution = () => {
                   </h3>
                   <div className="prose prose-lg dark:prose-invert">
                     <p className="text-muted-foreground mb-4">
-                      According to Chainalysis, approximately 20% of all Bitcoin
-                      (3.7 million BTC) is considered lost forever. At current
-                      prices, that's over $140 billion in inaccessible assets.
+                      According to cryptocurrency industry reports, a
+                      significant percentage of cryptocurrency has been lost
+                      forever due to forgotten keys and inaccessible wallets. At
+                      current prices, that's billions of dollars in inaccessible
+                      assets.
                     </p>
                     <p className="font-medium text-foreground">
                       Rollback's technology aims to prevent future losses and
@@ -128,9 +130,9 @@ const ProblemSolution = () => {
           <div className="mt-8 md:hidden overflow-x-auto pb-4">
             <div className="flex gap-4 w-max px-4">
               {[
-                "Lost Bitcoin value exceeds GDP of 130+ countries",
-                "Some lost wallets contain thousands of Bitcoin from early mining",
-                "The creator of Ethereum once lost 25% of his holdings",
+                "Lost crypto value exceeds GDP of many countries",
+                "Some lost wallets contain massive amounts of cryptocurrency from early mining",
+                "Even crypto founders have lost significant portions of their holdings",
               ].map((fact, index) => (
                 <div
                   key={index}
