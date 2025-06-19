@@ -64,7 +64,7 @@ const ProblemSolution = () => {
               </h3>
               <ul className="space-y-4">
                 {[
-                  "Smart contracts that automatically monitor wallet activity",
+                  "Our System that automatically monitor wallet activity",
                   "If inactivity is detected, funds are transferred to your designated fallback wallets",
                   "Multiple security parameters ensure your assets are only transferred when necessary",
                   "Complete control over timeframes, conditions, and destination wallets",
