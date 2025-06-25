@@ -296,7 +296,7 @@ const MediaKitPage = () => {
             </section>
 
             {/* Brand Guidelines */}
-            <section className="mb-10 sm:mb-16">
+            {/* <section className="mb-10 sm:mb-16">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Brand Guidelines</h2>
               <Card>
                 <CardContent className="p-4 sm:p-6">
@@ -384,7 +384,7 @@ const MediaKitPage = () => {
                   </div>
                 </CardContent>
               </Card>
-            </section>
+            </section> */}
           </div>
         </div>
       </motion.div>
