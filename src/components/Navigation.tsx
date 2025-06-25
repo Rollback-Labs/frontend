@@ -11,7 +11,6 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const isMobile = useIsMobile();
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
