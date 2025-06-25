@@ -20,11 +20,11 @@ const FAQ = () => {
       answer:
         "If you lose access to your private keys, Rollback acts as your safety net. Once your predefined inactivity period is reached, your funds will automatically transfer to your designated fallback wallet(s). This ensures your assets remain accessible even if your primary wallet keys are lost.",
     },
-    {
-      question: "Is Rollback secure? Has it been audited?",
-      answer:
-        "Yes, security is our top priority. The Rollback protocol has undergone comprehensive security audits by leading firms including CertiK, Trail of Bits, and OpenZeppelin. Our smart contracts are open-source, allowing for transparent review by the community. We implement multiple security layers and follow industry best practices.",
-    },
+    // {
+    //   question: "Is Rollback secure? Has it been audited?",
+    //   answer:
+    //     "Yes, security is our top priority. The Rollback protocol has undergone comprehensive security audits by leading firms including CertiK, Trail of Bits, and OpenZeppelin. Our smart contracts are open-source, allowing for transparent review by the community. We implement multiple security layers and follow industry best practices.",
+    // },
     {
       question: "What cryptocurrencies does Rollback support?",
       answer: "Rollback currently only supports Base Network",
@@ -35,23 +35,23 @@ const FAQ = () => {
       answer:
         "Absolutely. Rollback gives you full control over your inactivity parameters. You can set timeframes ranging from days to years depending on your needs. Different wallets can have different inactivity periods, and you can update these settings at any time through our dashboard.",
     },
-    {
-      question: "What prevents false triggers if I'm on vacation?",
-      answer:
-        "Rollback includes several features to prevent false triggers. You can set custom notification thresholds to alert you before any rollback occurs. Our system also allows for 'heartbeat' transactions that reset the inactivity timer without requiring significant activity. Additionally, you can temporarily pause the monitoring for planned absences.",
-    },
+    // {
+    //   question: "What prevents false triggers if I'm on vacation?",
+    //   answer:
+    //     "Rollback includes several features to prevent false triggers. You can set custom notification thresholds to alert you before any rollback occurs. Our system also allows for 'heartbeat' transactions that reset the inactivity timer without requiring significant activity. Additionally, you can temporarily pause the monitoring for planned absences.",
+    // },
     {
       question: "Can I use Rollback for my business or DAO?",
       answer:
         "Yes, Rollback offers enterprise solutions tailored for businesses, DAOs, and organizations. These include multi-signature requirements, role-based permissions, and customizable governance structures. Our technology ensures treasury funds remain accessible even during key personnel changes or emergencies.",
     },
-    {
-      question: "How much does Rollback cost to use?",
-      answer:
-        "Rollback operates on a tiered subscription model based on the value of assets protected and features needed.",
+    // {
+    //   question: "How much does Rollback cost to use?",
+    //   answer:
+    //     "Rollback operates on a tiered subscription model based on the value of assets protected and features needed.",
 
-      // answer: "Rollback operates on a tiered subscription model based on the value of assets protected and features needed. We offer a free basic plan for smaller holders, standard plans for individual investors, and enterprise plans for organizations. All plans include our core rollback functionality, with additional features available at higher tiers."
-    },
+    //   // answer: "Rollback operates on a tiered subscription model based on the value of assets protected and features needed. We offer a free basic plan for smaller holders, standard plans for individual investors, and enterprise plans for organizations. All plans include our core rollback functionality, with additional features available at higher tiers."
+    // },
     {
       question: "What happens if the blockchain network is congested?",
       answer:

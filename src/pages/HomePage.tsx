@@ -22,7 +22,7 @@ const HomePage = () => {
       <Features />
       <UseCases />
       <DashboardPreview />
-      <Trust />
+      {/* <Trust /> */}
       <FAQ />
     </div>
   );
