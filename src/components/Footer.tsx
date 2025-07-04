@@ -81,10 +81,18 @@ const Footer = () => {
   ];
 
   const resources = [
-    { icon: FileText, label: "Whitepaper", href: "#" },
-    { icon: Book, label: "Security Audits", href: "#" },
-    { icon: Github, label: "GitHub Repository", href: "#" },
-    { icon: MessageSquare, label: "Community", href: "#" },
+    {
+      icon: FileText,
+      label: "Whitepaper",
+      href: "https://rollback-labs.gitbook.io/rollback-labs",
+    },
+    // { icon: Book, label: "Security Audits", href: "#" },
+    {
+      icon: Github,
+      label: "GitHub Repository",
+      href: "https://github.com/Rollback-Labs",
+    },
+    // { icon: MessageSquare, label: "Community", href: "#" },
   ];
 
   return (
