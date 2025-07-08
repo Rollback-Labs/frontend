@@ -83,7 +83,7 @@ const Footer = () => {
   const resources = [
     {
       icon: FileText,
-      label: "Whitepaper",
+      label: "Docs",
       href: "https://rollback-labs.gitbook.io/rollback-labs",
     },
     // { icon: Book, label: "Security Audits", href: "#" },
