@@ -26,9 +26,10 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    // { to: "/", label: "Home" },
-    // { to: "/about", label: "About" },
-    // { to: "/media-kit", label: "Media Kit" },
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/tokenomics", label: "Tokenomics" },
+    { to: "/docs", label: "Docs" },
   ];
 
   return (
@@ -56,6 +57,26 @@ const Navigation = () => {
               </span>
             </Link>
           </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.to}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Link
+                  to={item.to}
+                  className="text-sm font-medium text-gray-700 hover:text-rollback-primary transition-colors duration-300 relative group"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rollback-primary transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
 
           <Button
             onClick={() => {
