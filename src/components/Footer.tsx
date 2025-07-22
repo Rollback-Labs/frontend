@@ -67,17 +67,23 @@ const Footer = () => {
       color: "hover:text-blue-400",
     },
     {
+      icon: Send,
+      href: "https://t.me/rollbackwallet",
+      label: "Telegram",
+      color: "hover:text-blue-500",
+    },
+    {
       icon: Mail,
       href: "mailto:rollbacklabs@gmail.com",
       label: "Email",
       color: "hover:text-green-500",
     },
-    {
-      icon: MessageSquare,
-      href: "#",
-      label: "Discord",
-      color: "hover:text-purple-500",
-    },
+    // {
+    //   icon: MessageSquare,
+    //   href: "#",
+    //   label: "Discord",
+    //   color: "hover:text-purple-500",
+    // },
   ];
 
   const resources = [
@@ -243,7 +249,6 @@ const Footer = () => {
               <ul className="space-y-3 text-center md:text-left">
                 {[
                   { to: "/", label: "Home" },
-                  { to: "/about", label: "About" },
                   { to: "/media-kit", label: "Media Kit" },
                 ].map((link, index) => (
                   <motion.li
