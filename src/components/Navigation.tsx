@@ -10,7 +10,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,11 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
 
   const navItems = [
     { to: "/", label: "Home" },
@@ -77,45 +84,133 @@ const Navigation = () => {
             ))}
           </div>
 
-          <Button
-            onClick={() => {
-              setIsClicked(true);
-              setTimeout(() => setIsClicked(false), 2000);
-            }}
-            className={`bg-rollback-primary hover:bg-rollback-primary/90 text-white text-xs sm:text-sm btn-primary shadow-lg hover:shadow-rollback-primary/30 px-4 py-2 sm:px-6 sm:py-2 rounded-full min-w-[100px] max-w-[140px] w-full sm:w-auto relative overflow-hidden ${
-              isClicked ? "cursor-wait" : "cursor-pointer"
-            }`}
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative"
+          <div className="flex items-center space-x-4">
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 text-gray-700 hover:text-rollback-primary hover:bg-rollback-primary/10"
+                  >
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-8">
+                      <Link to="/" className="flex items-center group">
+                        <RollbackLogo className="h-8 w-8 animate-spin-slow" />
+                        <span className="ml-2 text-xl font-bold group-hover:text-rollback-primary transition-colors duration-300">
+                          Rollback
+                        </span>
+                      </Link>
+                    </div>
+
+                    <nav className="flex flex-col space-y-6">
+                      {navItems.map((item, index) => (
+                        <motion.div
+                          key={item.to}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                        >
+                          <Link
+                            to={item.to}
+                            className={`text-lg font-medium transition-colors duration-300 p-3 rounded-lg block hover:bg-rollback-light/50 ${
+                              location.pathname === item.to
+                                ? "text-rollback-primary bg-rollback-light/30"
+                                : "text-gray-700 hover:text-rollback-primary"
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </nav>
+
+                    <div className="mt-auto pt-8">
+                      <Button
+                        onClick={() => {
+                          setIsClicked(true);
+                          setTimeout(() => setIsClicked(false), 2000);
+                        }}
+                        className="w-full bg-rollback-primary hover:bg-rollback-primary/90 text-white rounded-full py-3"
+                      >
+                        <AnimatePresence mode="wait">
+                          {!isClicked ? (
+                            <motion.span
+                              key="launch"
+                              initial={{ x: 0, opacity: 1 }}
+                              exit={{ x: -100, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                            >
+                              Launch App
+                            </motion.span>
+                          ) : (
+                            <motion.span
+                              key="coming-soon"
+                              initial={{ x: 100, opacity: 0 }}
+                              animate={{ x: 0, opacity: 1 }}
+                              exit={{ x: -100, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="flex items-center justify-center gap-2"
+                            >
+                              <Sparkles className="h-4 w-4" />
+                              Coming Soon
+                            </motion.span>
+                          )}
+                        </AnimatePresence>
+                      </Button>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+
+            {/* Desktop Launch Button */}
+            <Button
+              onClick={() => {
+                setIsClicked(true);
+                setTimeout(() => setIsClicked(false), 2000);
+              }}
+              className={`hidden md:flex bg-rollback-primary hover:bg-rollback-primary/90 text-white text-xs sm:text-sm btn-primary shadow-lg hover:shadow-rollback-primary/30 px-4 py-2 sm:px-6 sm:py-2 rounded-full min-w-[100px] max-w-[140px] w-full sm:w-auto relative overflow-hidden ${
+                isClicked ? "cursor-wait" : "cursor-pointer"
+              }`}
             >
-              <AnimatePresence mode="wait">
-                {!isClicked ? (
-                  <motion.span
-                    key="launch"
-                    initial={{ x: 0, opacity: 1 }}
-                    exit={{ x: -100, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    Launch App
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="coming-soon"
-                    initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -100, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="flex items-center gap-2"
-                  >
-                    Coming Soon
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </Button>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative"
+              >
+                <AnimatePresence mode="wait">
+                  {!isClicked ? (
+                    <motion.span
+                      key="launch"
+                      initial={{ x: 0, opacity: 1 }}
+                      exit={{ x: -100, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      Launch App
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="coming-soon"
+                      initial={{ x: 100, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -100, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="flex items-center gap-2"
+                    >
+                      Coming Soon
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </Button>
+          </div>
         </div>
       </div>
     </motion.nav>
