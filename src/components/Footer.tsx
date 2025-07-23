@@ -249,6 +249,8 @@ const Footer = () => {
               <ul className="space-y-3 text-center md:text-left">
                 {[
                   { to: "/", label: "Home" },
+                  // { to: "/about", label: "About" },
+                  { to: "/tokenomics", label: "Tokenomics" },
                   { to: "/media-kit", label: "Media Kit" },
                 ].map((link, index) => (
                   <motion.li

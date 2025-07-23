@@ -9,6 +9,7 @@ import BlogPage from "./pages/BlogPage";
 import DocumentationPage from "./pages/DocumentationPage";
 import NotFound from "./pages/NotFound";
 import MediaKitPage from "./pages/MediaKitPage";
+import TokenomicsPage from "./pages/TokenomicsPage";
 import { Analytics } from "@vercel/analytics/react";
 
 // Add framer-motion
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/docs" element={<DocumentationPage />} />
             <Route path="/media-kit" element={<MediaKitPage />} />
+            <Route path="/tokenomics" element={<TokenomicsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
