@@ -123,7 +123,7 @@ const UseCases = () => {
                           <li>Automated protection without constant monitoring</li>
                           <li>Customizable time frames and conditions</li>
                           <li>No third-party involvement or trust required</li>
-                          <li>Works across multiple blockchain networks</li>
+                          {/* <li>Works across multiple blockchain networks</li> */}
                         </ul>
                       </div>
                     </div>

@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Sparkles, Zap } from "lucide-react";
 import RollbackLogo from "./RollbackLogo";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Hero = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden hero-pattern pt-16">
       {/* Enhanced floating background elements */}
@@ -74,11 +77,15 @@ const Hero = () => {
                 size="lg"
                 className="bg-rollback-primary hover:bg-rollback-primary/90 text-white text-lg px-8 btn-primary shadow-lg hover:shadow-rollback-primary/30 group w-full sm:w-auto"
               >
-                <Link to="https://app.rollbacklabs.com" target="_blank">
+                <span
+                  className="flex items-center cursor-pointer"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
                   <Zap className="mr-2 h-5 w-5 group-hover:animate-bounce-soft" />
-                  Protect Your Assets
+                  {isHovered ? "Coming Soon" : "Protect Your Assets"}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </span>
               </Button>
               <Button
                 asChild

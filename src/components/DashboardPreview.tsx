@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -13,6 +13,8 @@ import {
 import { motion } from "framer-motion";
 
 const DashboardPreview = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,13 +75,14 @@ const DashboardPreview = () => {
             </div>
 
             <Button
-              asChild
               className="mt-8 bg-rollback-primary hover:bg-rollback-primary/90 text-white"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              <Link to="https://app.rollbacklabs.com" target="_blank">
-                Launch Dashboard
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              {/* <Link to="https://app.rollbacklabs.com" target="_blank"> */}
+              {isHovered ? "Coming Soon" : "Launch Dashboard"}
+              <ArrowRight className="ml-2 h-4 w-4" />
+              {/* </Link> */}
             </Button>
           </div>
 
