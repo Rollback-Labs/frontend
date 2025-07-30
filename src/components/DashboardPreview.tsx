@@ -75,14 +75,19 @@ const DashboardPreview = () => {
             </div>
 
             <Button
+              asChild
               className="mt-8 bg-rollback-primary hover:bg-rollback-primary/90 text-white"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              {/* <Link to="https://app.rollbacklabs.com" target="_blank"> */}
-              {isHovered ? "Coming Soon" : "Launch Dashboard"}
-              <ArrowRight className="ml-2 h-4 w-4" />
-              {/* </Link> */}
+              <a
+                href="https://app.rollbacklabs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {isHovered ? "Launch App" : "Launch Dashboard"}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
 

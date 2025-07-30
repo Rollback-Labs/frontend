@@ -256,14 +256,19 @@ const DocumentationPage = () => {
                       </CardContent>
                       <CardFooter>
                         <Button
+                          asChild
                           className="w-full bg-rollback-primary hover:bg-rollback-primary/90 text-white"
                           onMouseEnter={() => setIsHovered(true)}
                           onMouseLeave={() => setIsHovered(false)}
                         >
-                          {/* <a href="https://app.rollbacklabs.com" target="_blank"> */}
-                          {isHovered ? "Coming Soon" : "Try It Now"}
-                          <ChevronRight className="ml-2 h-4 w-4" />
-                          {/* </a> */}
+                          <a
+                            href="https://app.rollbacklabs.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {isHovered ? "Launch App" : "Try It Now"}
+                            <ChevronRight className="ml-2 h-4 w-4" />
+                          </a>
                         </Button>
                       </CardFooter>
                     </Card>

@@ -77,15 +77,18 @@ const Hero = () => {
                 size="lg"
                 className="bg-rollback-primary hover:bg-rollback-primary/90 text-white text-lg px-8 btn-primary shadow-lg hover:shadow-rollback-primary/30 group w-full sm:w-auto"
               >
-                <span
+                <a
+                  href="https://app.rollbacklabs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center cursor-pointer"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
                   <Zap className="mr-2 h-5 w-5 group-hover:animate-bounce-soft" />
-                  {isHovered ? "Coming Soon" : "Protect Your Assets"}
+                  {isHovered ? "Launch App" : "Protect Your Assets"}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </span>
+                </a>
               </Button>
               <Button
                 asChild

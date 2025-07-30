@@ -133,36 +133,25 @@ const Navigation = () => {
 
                     <div className="mt-auto pt-8">
                       <Button
-                        onClick={() => {
-                          setIsClicked(true);
-                          setTimeout(() => setIsClicked(false), 2000);
-                        }}
+                        asChild
                         className="w-full bg-rollback-primary hover:bg-rollback-primary/90 text-white rounded-full py-3"
                       >
-                        <AnimatePresence mode="wait">
-                          {!isClicked ? (
+                        <a
+                          href="https://app.rollbacklabs.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <AnimatePresence mode="wait">
                             <motion.span
                               key="launch"
                               initial={{ x: 0, opacity: 1 }}
-                              exit={{ x: -100, opacity: 0 }}
+                              animate={{ x: 0, opacity: 1 }}
                               transition={{ duration: 0.3, ease: "easeInOut" }}
                             >
                               Launch App
                             </motion.span>
-                          ) : (
-                            <motion.span
-                              key="coming-soon"
-                              initial={{ x: 100, opacity: 0 }}
-                              animate={{ x: 0, opacity: 1 }}
-                              exit={{ x: -100, opacity: 0 }}
-                              transition={{ duration: 0.3, ease: "easeInOut" }}
-                              className="flex items-center justify-center gap-2"
-                            >
-                              <Sparkles className="h-4 w-4" />
-                              Coming Soon
-                            </motion.span>
-                          )}
-                        </AnimatePresence>
+                          </AnimatePresence>
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -172,43 +161,31 @@ const Navigation = () => {
 
             {/* Desktop Launch Button */}
             <Button
-              onClick={() => {
-                setIsClicked(true);
-                setTimeout(() => setIsClicked(false), 2000);
-              }}
-              className={`hidden md:flex bg-rollback-primary hover:bg-rollback-primary/90 text-white text-xs sm:text-sm btn-primary shadow-lg hover:shadow-rollback-primary/30 px-4 py-2 sm:px-6 sm:py-2 rounded-full min-w-[100px] max-w-[140px] w-full sm:w-auto relative overflow-hidden ${
-                isClicked ? "cursor-wait" : "cursor-pointer"
-              }`}
+              asChild
+              className="hidden md:flex bg-rollback-primary hover:bg-rollback-primary/90 text-white text-xs sm:text-sm btn-primary shadow-lg hover:shadow-rollback-primary/30 px-4 py-2 sm:px-6 sm:py-2 rounded-full min-w-[100px] max-w-[140px] w-full sm:w-auto relative overflow-hidden"
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative"
+              <a
+                href="https://app.rollbacklabs.com"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <AnimatePresence mode="wait">
-                  {!isClicked ? (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative"
+                >
+                  <AnimatePresence mode="wait">
                     <motion.span
                       key="launch"
                       initial={{ x: 0, opacity: 1 }}
-                      exit={{ x: -100, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                       Launch App
                     </motion.span>
-                  ) : (
-                    <motion.span
-                      key="coming-soon"
-                      initial={{ x: 100, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: -100, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="flex items-center gap-2"
-                    >
-                      Coming Soon
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                  </AnimatePresence>
+                </motion.div>
+              </a>
             </Button>
           </div>
         </div>

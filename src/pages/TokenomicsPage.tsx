@@ -118,30 +118,24 @@ const TokenomicsPage = () => {
                     and govern the future of decentralized asset recovery.
                   </p>
 
-                  {/* Coming Soon Button */}
+                  {/* Get ROLL Tokens Button */}
                   <Button
+                    asChild
                     size="lg"
                     className="bg-rollback-primary hover:bg-rollback-primary/90 text-white px-8 py-3 rounded-full text-lg shadow-lg transition-all duration-300"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Zap className="h-5 w-5 mr-2" />
-                    {isHovered ? "Coming Soon" : "Get ROLL Tokens"}
-                    <ExternalLink className="h-4 w-4 ml-2" />
+                    <a
+                      href="https://app.uniswap.org/swap?outputCurrency=0xa563ae4f348e93c7f50e8fcbffafa44f5aed0b36"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Zap className="h-5 w-5 mr-2" />
+                      {isHovered ? "Swap on Uniswap" : "Get ROLL Tokens"}
+                      <ExternalLink className="h-4 w-4 ml-2" />
+                    </a>
                   </Button>
-
-                  {/* Commented out actual link version for later */}
-                  {/*
-                  <Button
-                    size="lg"
-                    className="bg-rollback-primary hover:bg-rollback-primary/90 text-white px-8 py-3 rounded-full text-lg shadow-lg"
-                    onClick={() => window.open("https://dexscreener.com/ethereum/YOUR_TOKEN_ADDRESS", "_blank")}
-                  >
-                    <Zap className="h-5 w-5 mr-2" />
-                    Get ROLL Tokens
-                    <ExternalLink className="h-4 w-4 ml-2" />
-                  </Button>
-                  */}
                 </motion.div>
 
                 <motion.div
