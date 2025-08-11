@@ -61,7 +61,8 @@ const Layout = ({ children }: LayoutProps) => {
             ease: "easeInOut",
           }}
         >
-          {children}
+          {/* enable smooth behavior for anchor links */}
+          <div className="scroll-smooth">{children}</div>
         </motion.main>
       </AnimatePresence>
 

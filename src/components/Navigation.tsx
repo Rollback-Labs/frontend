@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
@@ -34,9 +34,28 @@ const Navigation = () => {
 
   const navItems = [
     { to: "/", label: "Home" },
+    { to: "/#roadmap", label: "Roadmap" },
     { to: "/tokenomics", label: "Tokenomics" },
     { to: "/docs", label: "Docs" },
   ];
+
+  // Smooth-scroll behavior for in-page anchors
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (to.startsWith("/#")) {
+      e.preventDefault();
+      const id = to.split("#")[1];
+      if (location.pathname !== "/") {
+        // Navigate to home first; scrolling will be handled by hash effect below
+        window.location.href = `/#${id}`;
+        return;
+      }
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", `/#${id}`);
+      }
+    }
+  };
 
   return (
     <motion.nav
@@ -75,6 +94,7 @@ const Navigation = () => {
               >
                 <Link
                   to={item.to}
+                  onClick={(e) => handleNavClick(e, item.to)}
                   className="text-sm font-medium text-gray-700 hover:text-rollback-primary transition-colors duration-300 relative group"
                 >
                   {item.label}
@@ -119,6 +139,7 @@ const Navigation = () => {
                         >
                           <Link
                             to={item.to}
+                            onClick={(e) => handleNavClick(e, item.to)}
                             className={`text-lg font-medium transition-colors duration-300 p-3 rounded-lg block hover:bg-rollback-light/50 ${
                               location.pathname === item.to
                                 ? "text-rollback-primary bg-rollback-light/30"

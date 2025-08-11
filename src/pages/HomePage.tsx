@@ -9,6 +9,8 @@ import Verified from "@/components/Verified";
 import KYCVerified from "@/components/KYCVerified";
 import FAQ from "@/components/FAQ";
 import { useEffect } from "react";
+import Roadmap from "@/components/Roadmap";
+import RollbackSection from "@/components/RollbackSection";
 
 const HomePage = () => {
   useEffect(() => {
@@ -21,9 +23,11 @@ const HomePage = () => {
       <ProblemSolution />
       <HowItWorks />
       <Features />
+      <RollbackSection />
       <UseCases />
       <DashboardPreview />
       <KYCVerified />
+      <Roadmap />
       {/* <Trust /> */}
       <FAQ />
     </div>
