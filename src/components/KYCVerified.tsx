@@ -42,13 +42,14 @@ const KYCVerified = () => {
                   </div>
 
                   <h3 className="text-2xl md:text-3xl font-bold text-rollback-dark mb-4">
-                    KYC Verified
+                    KYC Verified & Fully Audited
                   </h3>
 
                   <p className="text-rollback-dark/60 mb-6 leading-relaxed">
                     Our team has successfully completed comprehensive KYC
-                    verification through AssureDeFi, ensuring full regulatory
-                    compliance and transparency.
+                    verification and a full smart contract security audit with
+                    AssureDeFi, ensuring compliance, transparency, and robust
+                    security.
                   </p>
 
                   <div className="flex flex-wrap gap-3">
@@ -70,6 +71,12 @@ const KYCVerified = () => {
                         AssureDeFi Verified
                       </span>
                     </div>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-full">
+                      <CheckCircle className="h-4 w-4 text-green-700" />
+                      <span className="text-green-700 font-medium text-sm">
+                        Fully Audited
+                      </span>
+                    </div>
                     <a
                       href="https://projects.assuredefi.com/project/rollback"
                       target="_blank"
@@ -82,10 +89,22 @@ const KYCVerified = () => {
                       </span>
                       <ExternalLink className="h-4 w-4" />
                     </a>
+                    <a
+                      href="https://projects.assuredefi.com/project/rollback"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-rollback-primary/10 border border-rollback-primary/20 rounded-full hover:bg-rollback-primary/20 text-rollback-primary transition-all duration-300"
+                    >
+                      <Shield className="h-4 w-4" />
+                      <span className="font-medium text-sm">
+                        View Audit Report
+                      </span>
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 flex gap-6">
                   <div className="relative">
                     <a
                       href="https://projects.assuredefi.com/project/rollback"
@@ -109,6 +128,40 @@ const KYCVerified = () => {
                           <div className="flex items-center justify-center gap-1 mt-2">
                             <span className="text-green-600/60 text-xs">
                               View Certificate
+                            </span>
+                            <ExternalLink className="h-3 w-3 text-green-600/60" />
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg ">
+                      <CheckCircle className="h-8 w-8 text-white" />
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <a
+                      href="https://projects.assuredefi.com/project/rollback"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:scale-105 transition-transform duration-300"
+                    >
+                      <div className="w-48 h-48 bg-gradient-to-br from-green-50 to-rollback-light border-2 border-solid border-green-300 rounded-3xl flex items-center justify-center shadow-inner p-4 hover:border-green-400 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                        <div className="text-center w-full">
+                          <img
+                            src="/assuredefi.png"
+                            alt="AssureDeFi Logo"
+                            className="w-24 h-24 mx-auto mb-3 object-contain"
+                          />
+                          <span className="text-green-600 font-semibold text-sm">
+                            Fully Audited
+                          </span>
+                          <p className="text-green-600/70 text-xs mt-1">
+                            By AssureDeFi
+                          </p>
+                          <div className="flex items-center justify-center gap-1 mt-2">
+                            <span className="text-green-600/60 text-xs">
+                              View Audit Report
                             </span>
                             <ExternalLink className="h-3 w-3 text-green-600/60" />
                           </div>
@@ -144,7 +197,7 @@ const KYCVerified = () => {
             >
               <Shield className="h-4 w-4 text-rollback-primary" />
               <span className="text-rollback-dark font-medium text-sm">
-                Verified by AssureDeFi
+                Audited and Verified by AssureDeFi
               </span>
               <ExternalLink className="h-3 w-3 text-rollback-primary/60" />
             </a>
