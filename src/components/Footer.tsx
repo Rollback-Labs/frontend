@@ -252,6 +252,7 @@ const Footer = () => {
                   // { to: "/about", label: "About" },
                   { to: "/tokenomics", label: "Tokenomics" },
                   { to: "/media-kit", label: "Media Kit" },
+                  { to: "/feedback", label: "Feedback" },
                 ].map((link, index) => (
                   <motion.li
                     key={link.label}

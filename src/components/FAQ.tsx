@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -100,12 +101,12 @@ const FAQ = () => {
               concerns.
             </p>
             <div className="flex justify-center">
-              <a
-                href="mailto:rollbacklabs@gmail.com"
+              <Link
+                to="/feedback"
                 className="inline-flex items-center justify-center bg-rollback-primary hover:bg-rollback-primary/90 text-white rounded-md px-6 py-2 font-medium"
               >
-                Contact Support
-              </a>
+                Leave Feedback
+              </Link>
             </div>
           </div>
         </div>
