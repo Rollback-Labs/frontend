@@ -13,7 +13,7 @@ const FeedbackPage = () => {
       role: "DeFi Trader",
       avatar: "A",
       rating: 5,
-      date: "2024-01-15",
+      date: "2024-08-15",
       content: "My wallet went inactive for months and I thought I lost everything. Rollback's inactive wallet recovery feature saved my 2.5 ETH! The process was seamless and I got my funds back quickly. This is revolutionary for wallet security!",
       verified: true,
       category: "Recovery"
@@ -24,7 +24,7 @@ const FeedbackPage = () => {
       role: "Crypto Enthusiast",
       avatar: "S",
       rating: 5,
-      date: "2024-01-12",
+      date: "2024-08-12",
       content: "I forgot about an old wallet with some tokens for over a year. Rollback helped me recover it when I thought it was lost forever. The testnet experience is incredible and gives me confidence in wallet management.",
       verified: true,
       category: "User Experience"
@@ -35,7 +35,7 @@ const FeedbackPage = () => {
       role: "Smart Contract Developer",
       avatar: "M",
       rating: 5,
-      date: "2024-01-10",
+      date: "2024-08-10",
       content: "As a developer, I'm impressed by how Rollback handles inactive wallet detection and recovery. The architecture is brilliant - it identifies truly abandoned wallets and provides a secure recovery mechanism.",
       verified: true,
       category: "Technical"
@@ -46,7 +46,7 @@ const FeedbackPage = () => {
       role: "NFT Collector",
       avatar: "E",
       rating: 4,
-      date: "2024-01-08",
+      date: "2024-08-08",
       content: "I had valuable NFTs sitting in an old wallet I hadn't touched in 18 months. Rollback's inactive wallet monitoring helped me reclaim them before they were truly lost. Game-changer for long-term holders!",
       verified: true,
       category: "NFT Recovery"
@@ -57,7 +57,7 @@ const FeedbackPage = () => {
       role: "Yield Farmer",
       avatar: "D",
       rating: 5,
-      date: "2024-01-05",
+      date: "2024-08-05",
       content: "Been testing Rollback's inactive wallet features for weeks. The monitoring system is outstanding - it properly identifies dormant wallets and provides secure recovery options. Perfect for managing multiple farming wallets.",
       verified: true,
       category: "Wallet Management"
@@ -68,7 +68,7 @@ const FeedbackPage = () => {
       role: "Crypto Investor",
       avatar: "L",
       rating: 5,
-      date: "2024-01-03",
+      date: "2024-08-03",
       content: "I have multiple wallets from different investment periods. Some went inactive and I thought those funds were gone. Rollback's recovery system helped me reclaim significant assets from dormant wallets.",
       verified: true,
       category: "Asset Recovery"
@@ -79,7 +79,7 @@ const FeedbackPage = () => {
       role: "DApp Builder",
       avatar: "R",
       rating: 4,
-      date: "2024-01-01",
+      date: "2024-08-08",
       content: "Integrating Rollback's inactive wallet detection into our DApp was seamless. It helps our users recover abandoned accounts and provides an excellent safety net for wallet management.",
       verified: true,
       category: "Integration"
