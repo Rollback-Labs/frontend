@@ -87,7 +87,8 @@ export const useSimpleStaking = (): UseSimpleStakingReturn => {
   const [isStaking, setIsStaking] = useState(false);
   const [isUnstaking, setIsUnstaking] = useState(false);
   const [isClaimingRewards, setIsClaimingRewards] = useState(false);
-  const [pendingAction, setPendingAction] = useState<'approve' | 'stake' | 'unstake' | 'claim' | null>(null);
+  const [pendingAction, setPendingAction] = useState<'approve' | 'stake' | 'unstake' | 'claim' | 'approve-stake' | null>(null);
+  const [pendingStakeAmount, setPendingStakeAmount] = useState<string>("");
 
   // Get user's ROLL token balance
   const { data: balanceData } = useBalance({
@@ -118,18 +119,61 @@ export const useSimpleStaking = (): UseSimpleStakingReturn => {
       setIsUnstaking(false);
       setIsClaimingRewards(false);
       
-      // Show success message
-      toast({
-        title: `${action.charAt(0).toUpperCase() + action.slice(1)} successful!`,
-        description: `Transaction confirmed on blockchain.`,
-      });
+      // Handle different action types
+      if (action === 'approve-stake') {
+        // First approval completed, now auto-stake
+        toast({
+          title: "Approval successful!",
+          description: "Starting automatic staking...",
+        });
+        
+        // Auto-trigger stake
+        setTimeout(() => {
+          if (pendingStakeAmount) {
+            setIsStaking(true);
+            setPendingAction('stake');
+            
+            try {
+              const amountWei = parseUnits(pendingStakeAmount, 18);
+              
+              writeContract({
+                address: STAKING_CONTRACT as `0x${string}`,
+                abi: STAKING_ABI,
+                functionName: 'stake',
+                args: [amountWei],
+              });
+              
+              toast({
+                title: "Auto-staking initiated",
+                description: "Please confirm the staking transaction in your wallet.",
+              });
+              
+              setPendingStakeAmount(""); // Clear the pending amount
+            } catch (error: any) {
+              setIsStaking(false);
+              setPendingAction(null);
+              toast({
+                title: "Auto-staking failed",
+                description: "Please try staking manually.",
+                variant: "destructive",
+              });
+            }
+          }
+        }, 1000);
+      } else {
+        // Show success message for other actions
+        toast({
+          title: `${action.charAt(0).toUpperCase() + action.slice(1)} successful!`,
+          description: `Transaction confirmed on blockchain.`,
+        });
 
-      // Refresh data
-      setTimeout(() => {
-        refetchStakeInfo();
-      }, 2000);
+        // Refresh data
+        setTimeout(() => {
+          refetchStakeInfo();
+        }, 2000);
+      }
     }
-  }, [isConfirmed, pendingAction, toast, refetchStakeInfo]);
+  }, [isConfirmed, pendingAction, toast, refetchStakeInfo, writeContract, pendingStakeAmount]);
 
   // Handle transaction errors
   useEffect(() => {
@@ -150,7 +194,7 @@ export const useSimpleStaking = (): UseSimpleStakingReturn => {
     }
   }, [writeError, pendingAction, toast]);
 
-  // Approve tokens
+  // Approve tokens (will auto-stake after approval)
   const approveToken = useCallback(async (amount: string) => {
     if (!address || !isConnected) {
       toast({
@@ -161,8 +205,19 @@ export const useSimpleStaking = (): UseSimpleStakingReturn => {
       return;
     }
 
+    const amountNum = parseFloat(amount);
+    if (amountNum < 5000) {
+      toast({
+        title: "Amount too low",
+        description: "Minimum stake is 5,000 ROLL tokens.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsApproving(true);
-    setPendingAction('approve');
+    setPendingAction('approve-stake');
+    setPendingStakeAmount(amount); // Store amount for auto-staking
     
     try {
       const amountWei = parseUnits(amount, 18);
@@ -176,13 +231,14 @@ export const useSimpleStaking = (): UseSimpleStakingReturn => {
 
       toast({
         title: "Approval submitted",
-        description: "Please confirm in your wallet.",
+        description: "After approval, your tokens will be automatically staked.",
       });
       
     } catch (error: any) {
       console.error('Approval error:', error);
       setIsApproving(false);
       setPendingAction(null);
+      setPendingStakeAmount("");
       toast({
         title: "Approval failed",
         description: "Please try again.",

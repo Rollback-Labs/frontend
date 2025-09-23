@@ -322,45 +322,29 @@ const SimpleStakingPage = () => {
                             </div>
                           </div>
 
-                          {needsApproval ? (
-                            <Button 
-                              onClick={handleApprove}
-                              disabled={isApproving || !stakeAmount}
-                              className="w-full bg-orange-500 hover:bg-orange-600 text-white"
-                              size="lg"
-                            >
-                              {isApproving ? (
-                                <>
-                                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                                  Approving...
-                                </>
-                              ) : (
-                                <>
-                                  <Plus className="h-4 w-4 mr-2" />
-                                  Approve ROLL
-                                </>
-                              )}
-                            </Button>
-                          ) : (
-                            <Button 
-                              onClick={handleStake}
-                              disabled={isStaking || !stakeAmount}
-                              className="w-full bg-rollback-primary hover:bg-rollback-primary/90 text-white"
-                              size="lg"
-                            >
-                              {isStaking ? (
-                                <>
-                                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                                  Staking...
-                                </>
-                              ) : (
-                                <>
-                                  <Plus className="h-4 w-4 mr-2" />
-                                  Stake ROLL
-                                </>
-                              )}
-                            </Button>
-                          )}
+                          <Button 
+                            onClick={handleApprove}
+                            disabled={isApproving || isStaking || !stakeAmount}
+                            className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                            size="lg"
+                          >
+                            {isApproving ? (
+                              <>
+                                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                                Approving...
+                              </>
+                            ) : isStaking ? (
+                              <>
+                                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                                Auto-Staking...
+                              </>
+                            ) : (
+                              <>
+                                <Plus className="h-4 w-4 mr-2" />
+                                Approve & Stake ROLL
+                              </>
+                            )}
+                          </Button>
                         </TabsContent>
                         
                         <TabsContent value="unstake" className="space-y-6">
