@@ -5,12 +5,10 @@ import Features from "@/components/Features";
 import UseCases from "@/components/UseCases";
 import DashboardPreview from "@/components/DashboardPreview";
 import Trust from "@/components/Trust";
-import Verified from "@/components/Verified";
 import KYCVerified from "@/components/KYCVerified";
 import FAQ from "@/components/FAQ";
 import { useEffect } from "react";
 import Roadmap from "@/components/Roadmap";
-import RollbackSection from "@/components/RollbackSection";
 
 const HomePage = () => {
   useEffect(() => {
@@ -23,7 +21,6 @@ const HomePage = () => {
       <ProblemSolution />
       <HowItWorks />
       <Features />
-      <RollbackSection />
       <UseCases />
       <DashboardPreview />
       <KYCVerified />
