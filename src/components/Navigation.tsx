@@ -36,6 +36,7 @@ const Navigation = () => {
     { to: "/", label: "Home" },
     { to: "/#roadmap", label: "Roadmap" },
     { to: "/tokenomics", label: "Tokenomics" },
+    { to: "/staking", label: "Staking" },
     { to: "/feedback", label: "Feedback" },
     { to: "/docs", label: "Docs" },
   ];
