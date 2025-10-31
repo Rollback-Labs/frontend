@@ -11,7 +11,7 @@ import BlogPage from "./pages/BlogPage";
 import DocumentationPage from "./pages/DocumentationPage";
 import NotFound from "./pages/NotFound";
 import MediaKitPage from "./pages/MediaKitPage";
-import TokenomicsPage from "./pages/TokenomicsPage";
+// import TokenomicsPage from "./pages/TokenomicsPage";
 import FeedbackPage from "./pages/FeedbackPage";
 import SimpleStakingPage from "./pages/SimpleStakingPage";
 import { Analytics } from "@vercel/analytics/react";
@@ -35,7 +35,7 @@ const App = () => (
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/docs" element={<DocumentationPage />} />
             <Route path="/media-kit" element={<MediaKitPage />} />
-            <Route path="/tokenomics" element={<TokenomicsPage />} />
+            {/* <Route path="/tokenomics" element={<TokenomicsPage />} /> */}
             <Route path="/feedback" element={<FeedbackPage />} />
               <Route path="/staking" element={<SimpleStakingPage />} />
             <Route path="*" element={<NotFound />} />

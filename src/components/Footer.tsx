@@ -250,7 +250,7 @@ const Footer = () => {
                 {[
                   { to: "/", label: "Home" },
                   // { to: "/about", label: "About" },
-                  { to: "/tokenomics", label: "Tokenomics" },
+                  // { to: "/tokenomics", label: "Tokenomics" },
                   { to: "/media-kit", label: "Media Kit" },
                   { to: "/feedback", label: "Feedback" },
                 ].map((link, index) => (
